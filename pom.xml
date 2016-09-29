@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <prerequisites>
+        <maven>2.0.4</maven>
+    </prerequisites>
+ 
+    <groupId>com.andrewfesta.dao4j</groupId>
+    <artifactId>dao4j</artifactId>
+    <packaging>pom</packaging>
+    
+    <name>DAO4j Multi-Module Project</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <description>
+        DAO4J Multi-Module Project
+    </description>
+     
+    <modules>
+	<module>dao4j-parent</module>
+	<module>dao4j-core</module>
+	<module>dao4j-collections</module>
+	<module>dao4j-criteria</module>
+	<module>dao4j-jpa</module>
+	<module>dao4j-paging</module>
+    </modules>
+    
+     <organization>
+        <name>Andrew Festa</name>
+        <url>http://www.andrewfesta.com</url>
+    </organization>
+        
+    <scm>
+        <connection>scm:svn:svn://${svn.host}/myrepo/framework/trunk</connection>
+        <developerConnection>scm:svn:svn://${svn.host}/myrepo/framework/trunk</developerConnection>
+    </scm>
+        
+       
+    <distributionManagement>
+    	  <repository>
+	    <id>releases</id>
+	    <name>Release Repository</name>
+	    <url>http://${nexus.host}/content/repositories/releases</url>
+	  </repository>
+	  <snapshotRepository>
+	    <id>snapshots</id>
+	    <name>Snapshot Repository</name>
+	    <url>http://${nexus.host}/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	<site> 
+            <id>site-distribution</id> 
+            <url>${location.deploy.site}</url> 
+      </site>
+    </distributionManagement>
+    
+    
+    <properties>
+
+        <!--
+        ||      For use with the maven-scm-plugin; this user
+        ||      must have writable access to the subversion repo
+        ||      to perform automatic tagging and version updates
+        ||      via the maven-release-plugin.
+        -->
+        <scm.username>cruisecontrol</scm.username>
+        <scm.password>cruise</scm.password>
+
+	<svn.host>svnserve</svn.host>	
+	<nexus.host>nexus:8081</nexus.host>
+	
+    </properties>
+</project>

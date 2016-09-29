@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<prerequisites>
+		<maven>2.0.4</maven>
+	</prerequisites>
+
+	<parent>
+		<groupId>com.andrewfesta.dao4j</groupId>
+		<artifactId>dao4j-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../dao4j-parent</relativePath>
+	</parent>
+
+	<artifactId>dao4j-criteria</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Dao4j Criteria Framework</name>
+
+	<description>
+        DAO4J Criteria Framework
+    	</description>
+
+	<organization>
+		<name>Andrew Festa</name>
+		<url>http://www.andrewfesta.com</url>
+	</organization>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.andrewfesta.dao4j</groupId>
+			<artifactId>dao4j-core</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+</project>

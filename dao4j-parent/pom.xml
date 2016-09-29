@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<prerequisites>
+		<maven>2.0.4</maven>
+	</prerequisites>
+
+	<groupId>com.andrewfesta.dao4j</groupId>
+	<artifactId>dao4j-parent</artifactId>
+	<packaging>pom</packaging>
+
+	<name>Dao4j Parent POM</name>
+	<version>1.0.0-SNAPSHOT</version>
+	
+	<organization>
+		<name>Andrew Festa</name>
+		<url>http://www.andrewfesta.com</url>
+	</organization>
+
+	<properties>
+		<java.version>1.7</java.version>
+		
+		<version.mysql>5.1.5</version.mysql>
+		<version.hibernate.entitymanager>5.0.7.Final</version.hibernate.entitymanager>
+		<version.junit>4.7</version.junit>
+	</properties>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
+
+		<!-- || defaults for plugins -->
+		<pluginManagement>
+			<plugins>
+				<!-- || Provides for source distributions -->
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1.2</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+								<goal>test-jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- || Provides the tests binary distribution -->
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.3.1</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>jar</goal>
+								<goal>test-jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<!-- || Maven Source Control Manager Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.7</version>
+				<configuration>
+					<username>${scm.username}</username>
+					<password>${scm.password}</password>
+				</configuration>
+			</plugin>
+
+			<!-- || Maven Compiler Plugin -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<username>${scm.username}</username>
+					<password>${scm.password}</password>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+	<!-- || This section determines the prefereneces for dependency || versions 
+		and scopes. None of these dependencies will || be downloaded unless referenced 
+		in a 'dependency' section || of a child project. Specifying all the information 
+		here || allows the child project to just specify the artifact || and group 
+		id; the same version will be used for || all child projects. || || In addition 
+		to external dependencies, this section || declares the inter/intra project 
+		dependencies -->
+	<dependencyManagement>
+		<dependencies>
+		
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-collections</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-criteria</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-jpa</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-paging</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${version.mysql}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hibernate</groupId>
+  				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${version.hibernate.entitymanager}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${version.junit}</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+</project>
