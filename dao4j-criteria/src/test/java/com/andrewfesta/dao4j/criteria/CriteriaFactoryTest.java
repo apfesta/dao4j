@@ -47,7 +47,7 @@ public class CriteriaFactoryTest {
 		assertEquals(7, ((Integer[])c5.getNamedValues().get("id"))[3].intValue());
 		c5 = cf.in("id", new Integer[] {9});
 		assertEquals("id = :id", c5.getExpression(td));
-		assertEquals(9, ((Integer[])c5.getNamedValues().get("id"))[0].intValue());
+		assertEquals(9, ((Integer)c5.getNamedValues().get("id")).intValue());
 		
 		//Not
 		c6 = cf.not(c1);

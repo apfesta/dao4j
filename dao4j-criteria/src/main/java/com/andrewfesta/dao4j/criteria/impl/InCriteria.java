@@ -28,7 +28,7 @@ public class InCriteria extends EqualsCriteria {
 	}
 
 	<T> InCriteria(String name, T[] values) {
-		super(name, values);
+		super(name, getValue(values));
 		this.operator = getOperator(values);
 	}
 	
@@ -45,7 +45,7 @@ public class InCriteria extends EqualsCriteria {
 	}
 
 	<T> InCriteria(String name, Collection<T> values) {
-		super(name, values);
+		super(name, getValue(values));
 		this.operator = getOperator(values);
 	}
 	
