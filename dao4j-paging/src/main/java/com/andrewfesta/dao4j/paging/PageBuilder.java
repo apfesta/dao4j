@@ -55,6 +55,7 @@ public class PageBuilder<D,Token> {
 			listCallback.initList(items);
 		}
 		page.setItems(items);
+		page.setCurrentPage(prevPage);
 		Pagination<Token> nextPage = new Pagination<Token>();
 		if (items.isEmpty()) {
 			nextPage.setAfter(prevPage.getAfter());

@@ -50,6 +50,7 @@ public class PageBuilderTest {
 		assertEquals(10, results.getItems().get(0).id);
 		assertEquals(4, results.getItems().size());
 		assertEquals(7, results.getItems().get(3).id);
+		assertEquals((Integer)0, results.getCurrentPage().getAfter());
 		assertEquals((Integer)7, results.getNextPage().getBefore());
 		assertEquals((Integer)10, results.getNextPage().getAfter());
 		
@@ -67,6 +68,7 @@ public class PageBuilderTest {
 		assertEquals(2, results.getItems().get(0).id);
 		assertEquals(2, results.getItems().size());
 		assertEquals(1, results.getItems().get(1).id);
+		assertEquals((Integer)0, results.getCurrentPage().getAfter());
 		assertNull(results.getNextPage().getBefore());
 		assertEquals((Integer)2, results.getNextPage().getAfter());
 	}
@@ -89,6 +91,7 @@ public class PageBuilderTest {
 		assertEquals(1, results.getItems().get(0).id);
 		assertEquals(4, results.getItems().size());
 		assertEquals(4, results.getItems().get(3).id);
+		assertEquals((Integer)0, results.getCurrentPage().getAfter());
 		assertEquals((Integer)1, results.getNextPage().getBefore());
 		assertEquals((Integer)4, results.getNextPage().getAfter());
 		
@@ -106,6 +109,7 @@ public class PageBuilderTest {
 		assertEquals(9, results.getItems().get(0).id);
 		assertEquals(2, results.getItems().size());
 		assertEquals(10, results.getItems().get(1).id);
+		assertEquals((Integer)0, results.getCurrentPage().getAfter());
 		assertEquals((Integer)9, results.getNextPage().getBefore());
 		assertEquals((Integer)10, results.getNextPage().getAfter());
 	}

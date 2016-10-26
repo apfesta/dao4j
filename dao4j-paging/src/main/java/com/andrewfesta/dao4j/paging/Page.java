@@ -6,6 +6,7 @@ public class Page<D, Token> {
 
 	private List<D> items;
 	private Pagination<Token> nextPage;
+	private Pagination<Token> currentPage;
 	
 	public List<D> getItems() {
 		return items;
@@ -18,5 +19,11 @@ public class Page<D, Token> {
 	}
 	public void setNextPage(Pagination<Token> nextPage) {
 		this.nextPage = nextPage;
+	}
+	public Pagination<Token> getCurrentPage() {
+		return currentPage;
+	}
+	public void setCurrentPage(Pagination<Token> currentPage) {
+		this.currentPage = currentPage;
 	}
 }
