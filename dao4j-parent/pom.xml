@@ -84,17 +84,6 @@
 		</pluginManagement>
 
 		<plugins>
-			<!-- || Maven Source Control Manager Plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-scm-plugin</artifactId>
-				<version>1.7</version>
-				<configuration>
-					<username>${scm.username}</username>
-					<password>${scm.password}</password>
-				</configuration>
-			</plugin>
-
 			<!-- || Maven Compiler Plugin -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -109,8 +98,10 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5.3</version>
 				<configuration>
-					<username>${scm.username}</username>
-					<password>${scm.password}</password>
+					<goals>deploy</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<pushChanges>true</pushChanges>
+					<localCheckout>true</localCheckout>
 				</configuration>
 			</plugin>
 
