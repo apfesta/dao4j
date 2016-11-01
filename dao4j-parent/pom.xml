@@ -115,13 +115,31 @@
 			</dependency>
 			<dependency>
 				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-core</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
 				<artifactId>dao4j-collections</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-collections</artifactId>
+				<version>${project.version}</version>
+				<classifier>tests</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.andrewfesta.dao4j</groupId>
+				<artifactId>dao4j-criteria</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.andrewfesta.dao4j</groupId>
 				<artifactId>dao4j-criteria</artifactId>
 				<version>${project.version}</version>
+				<classifier>tests</classifier>
 			</dependency>
 			<dependency>
 				<groupId>com.andrewfesta.dao4j</groupId>

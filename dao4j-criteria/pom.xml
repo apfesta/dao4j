@@ -40,6 +40,12 @@
 			<groupId>com.andrewfesta.dao4j</groupId>
 			<artifactId>dao4j-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.andrewfesta.dao4j</groupId>
+			<artifactId>dao4j-core</artifactId>
+			<classifier>tests</classifier>
+            <scope>test</scope>
+		</dependency>
 		
 		<dependency>
 			<groupId>junit</groupId>
