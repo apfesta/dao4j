@@ -54,7 +54,8 @@
 
     </properties>
 
-    <plugins>
+    <build>
+    	<plugins>
 		<plugin>
 	            <artifactId>maven-scm-plugin</artifactId>
 	            <version>1.8.1</version>
@@ -62,6 +63,7 @@
 	                <tag>${project.artifactId}-${project.version}</tag>
 	            </configuration>
 	        </plugin>
-    </plugins>
+    	</plugins>
+    </build>
         
 </project>
