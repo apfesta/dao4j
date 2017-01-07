@@ -172,6 +172,7 @@ public abstract class AbstractPagingJpaDAO<D extends Entity<ID>,ID extends Seria
 			q.setMaxResults(maxElements);
 			
 			Page<T, Token> page = new PageBuilder<T, Token>()
+					.setInitItemsCallback(itemsCallback)
 					.setItems(q.getResultList())
 					.setPrevPagination(paging)
 					.setGetLastTokenCallback(tokenCallback)
