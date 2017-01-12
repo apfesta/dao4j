@@ -8,13 +8,13 @@ import java.util.Collection;
 import java.util.Date;
 
 import com.andrewfesta.dao4j.dao.DAO;
-import com.andrewfesta.dao4j.domain.PersistableEntity;
+import com.andrewfesta.dao4j.domain.Entity;
 
 /**
  * @author Andy
  *
  */
-public class MockDAO<D extends PersistableEntity<ID>,ID extends Serializable> 
+public class MockDAO<D extends Entity<ID>,ID extends Serializable> 
 	implements DAO<D, ID> {
 
 	private D getReturnValue;
